@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>AIF Portfolio</title>
+
+	<style>
+		body{
+			font-size: 1.4em;
+			font-family: Verdana;
+			font-weight: Normal;
+			text-align: justify;
+			color: hsla(0, 0%, 100%, 0.75);
+			background-color: hsl(0, 100%, 100%);
+			background-attachment: fixed;
+			transition: background-color 2s;
+		}
+
+		.section{
+			margin-top: 6.25vw;
+			margin-bottom: 6.25vw;
+			margin-left: 6.25vw;
+			margin-right: 6.25vw;
+
+			padding-top: 3.125vw;
+			padding-bottom: 9.375vw;
+			padding-left: 6.25vw;
+			padding-right: 6.25vw;
+			background-color: hsla(0, 0%, 0%, 0.25);
+		}
+
+		img{
+			width: 100vh;
+			opacity: 75%;
+			background-color: hsla(0, 0%, 100%, 0.75);
+		}
+
+		h1{
+			font-size: 3.4em;
+			font-weight: lighter;
+			text-align: center;
+			padding-top: 1.7em;
+		}
+
+		h2{
+			font-size: 2.4em;
+			font-weight: lighter;
+			text-align: center;
+			padding-top: 1.2em;
+		}
+
+		h3{
+			font-size: 2.0em;
+			font-weight: lighter;
+			text-align: center;
+			padding-top: 1.0em;
+		}
+
+		h4{
+			font-size: 1.7em;
+			font-weight: lighter;
+			padding-top: 0.8em;
+		}
+
+		h5{
+			font-size: 1.4em;
+			font-weight: Normal;
+			text-indent: 0.5em;
+			padding-top: 0.7em;
+		}
+
+		small{
+			font-size: 0.5em;
+		}
+
+		p{
+			padding-bottom: 2em;
+			opacity: 1;
+		}
+
+		a{
+			color: rgb(64, 128, 192)
+		}
+
+		a:hover{
+			color: rgb(192, 128, 128)
+		}
+
+	</style>
+	
+</head>
+
+<body style="background-image: url(background.svg); background-size: 100%;">
+
+	<div class="section" data-color="hsl(180, 50%, 12.5%)">
+
+		<h1>AIF Portfolio</h1>
+
+		<p style="text-align: right;">By Liam Moorhouse</p>
+
+	</div>
+
+	<div class="section" data-color="hsl(210, 50%, 12.5%)">
+
+		<h2>Creating a Goal</h2>
+
+	</div>
+
+	<div class="section" data-color="hsl(240, 50%, 12.5%)">
+
+		<h3>Choosing an Interest</h3>
+
+		<h4>Lotus Diagram</h4>
+			<p>To start AIF, I had to create a project for myself, and to choose a project, I needed to explore some of my interests and use those to my advantage.
+				For this, I created a Lotus Diagram of several of my interests, and from that I thought of possible projects that I could partake in.
+			</p>
+
+			<p style="text-align: center;">
+				<img src="lotus.png">
+			</p>
+
+			<p>
+				This lotus diagram shows many topics close to my heart, such as computer science and mathematics.
+				Looking at my options, I set my mind on exploring my skill in Computer Science and code development, due to previous expertise I built up.
+				From there I begun looking into a potential project.
+			</p>
+			
+		<h4>Project 1</h4>
+			<p>
+				The first potenential project that I invested time in reasearch was trying to learn HTMX, a coding language for websites.
+				I was interested in this, because it seemed to be a replacement for many if the functions of Javascript, a common, yet flawed language, with few possible replacements.
+				I knew from previous expirience that HTML5 was a skill of mine, that was held back by a refusal to learn Javascript, but this could have been a solution.
+			</p>
+
+			<p>
+				That was until I started prelimiary research.
+			</p>
+
+			<p>
+				From an analysis of the <a href="https://htmx.org/">HTMX organisation webpage</a>, it seems that HTMX would not be as fitting a replacement as I orginally thought.
+				While HTMX does replace many of the features of Javascript, it is best sat to replace React.js, a library for Javascript.
+				For those not in the know about website developement, React.js is a package how Javascript that extends it's functionality.
+				In this way, HTMX stands as a thing to use <i>with</i> Javascript for interactive web UI, as opposed to instead of it.
+				Seeing that HTMX did not fufil the purpose I expected it to, I chose to set my sights on a different project.
+			</p>
+
+		<h4>Project 2</h4>
+			<p>
+				The second project I considered was creating a game. A video game that was mix of several niches, with inspiration from several sources.
+				Firstly, from Kerbal Space Program, a game about the exploration of the Kerbol system.
+				Secondly, from a mod for the game, which introduced a realistic n-body gravity simulation.
+				Thirdly, from a seperate space faring game called Elite Dangerous, which depicts intergallactic trade between space stations thousands throughout the milkyway.
+				Forthly, from youtube creators, such as Sebastian Lague, and Acerola, who undertake learning and applications of shader language.
+				From this an idea formed in my head, of a 2D gravity simulation, space exploration game, with realistic orbital mechanics, and 2D path tracing.
+			</p>
+	</div>
+
+	<div class="section" data-color="hsl(270, 50%, 12.5%)">
+		<h3>Iterating on the Goal</h3>
+			<p>
+				The next stage of development is getting specific with a goal.
+				However, I know not enough about certain aspects of this project to ascertain the diffculty of hypothetical features. 
+				The most important part, is cutting off "dead weight" from the concept of the game, to make it a more realistic thing to achieve in the alotted time frame, and so that once the goal is developed, I know what I need to learn.
+			</p>
+
+			<p>
+				To begin, I created a mind map of my possible sources of information.
+			</p>
+
+			<p>
+				<img src="spacegamenotes.svg">
+			</p>
+
+		<h4>Feasability of 2D Raytracing</h4>
+			<p>
+				Raytracing is a technique in which a computer simulates the movement of photons in order to make more realistic lighting.
+				It's main usage in the past has been in animation, however the increasing computational power of desktop computers has led to large studios adding real time raytracing to videogames.
+			</p>
+
+			<p>
+				Information regarding raytracing was obtained through several sources, by authors and educators extremely familiar with computer sciences (excluding Wikipedia).
+				The following are the resources I used to gain a more advanced understanding of shaders, and of raytracing itself.
+			</p>
+
+			<p>
+				- <a href="https://www.youtube.com/@Acerola_t">Acerola's Educational Videos</a><br>
+				- <a href="https://www.taylorpetrick.com/blog/post/2d-ray-tracing">Taylor Petrick's Blogpost on 2D Ray Tracing</a><br>
+				- <a href="https://www.youtube.com/c/SebastianLague">Sebastian Lague's Educational Videos</a><br>
+				- <a href="https://raytracing.github.io/books/RayTracingInOneWeekend.html">Peter Shirley's Guide "Ray Tracing in One Weekend"</a><br>
+				- <a href="https://en.wikipedia.org/wiki/Ray_tracing_(graphics)">Wikipedia's Articles</a><br>
+			</p>
+			
+			<p>
+				Reading through these sources shows that raytracing of any kind is extremely difficult without a complex understanding of shader languages.
+				Understandably, raytracing requires a lot of arthimatic, and an intricate understanding of shader code to program it so that it is efficient enough to run in real time.
+				From these sources, I have also come to understand that raytracing a 2D scene requires rendering the scene in 3D objects, and mimicing the interactions of light through that.
+				This adds an insane level of complexity, to the level that it could not be reasonably achieved before the end of semester.
+				For this reason, 2D raytracing 
+			</p>
+
+		<h4>Orbital Simulation</h4>
+			<p>
+				The orbital simulation of this game is inspired by the Kerbal Space Program Mod, Pricipia.
+				Kerbal Space Program is a game about creating spacecraft and rockets, and sending them interplanetery in the fictional solar system of Kerbol.
+				Principia adds an N-body physics simulation to KSP, which allows objects to orbit in more complex and realistic ways.
+				Principia also has a <a href="https://github.com/mockingbirdnest/Principia/wiki/Technical-Overview">Github Page</a>, which gives a techinical overview of how it was implemented, which will prove exceptionally useful for development of a physics model for the simulator.
+			</p>
+
+		<h4>TRAPPIST-1</h4>
+			<p>
+				To make the fictional solar system that the game will take place in, it would be easiest to create a model of an existing solar system to check that the physics are accurate, and then modify the system to add whatever features are wanted from the system.
+				This means finding and making a solar system, which I set out to find data on from NASA's Exoplantery Archive.
+				There I found mention of TRAPPIST-1, and extremely small system 40 light years from Sol (our solar system), with 7 planets, all in very circular, low eccentricity orbits.
+				TRAPPIST-1 is an extremely good model for the game for several reasons.
+				Firstly, reliable data is easily accessed from NASA's website.
+				Secondly, orbits without large deviations from the a circular plane are much more accurately simulated in 2D dimensions.
+				Thridly, the system is small, meaning faster travel times between bodies, making it less tediou for player to move around the system.
+			</p>
+
+		<h4>Spacecraft Design & Game Design</h4>
+			<p>
+				To actually be a game, instead of a orbital simulation, there needs to be something to do.
+				In this game the player will command a spacecraft, equiped with various Sci-Fi engines, armaments, and technologies, in order to make the setting both realistic, and engaging.
+				The biggest inspiration for the game is Elite Dangerous, a semi-realistic open-world spacefaring game.
+				Elite Dangerous is a sandbox, where you can trade materials, take cargo from system to system, mine asteroids, and ferry passengers, all in the pursuit of credits.
+				With credits you can purchase a better equiped spacecraft, which helps you make more credits, which leads to a tried and true openworld progression.
+				Another inspiration for the game is FTL: Faster Than Light.
+				FTL is a roguelike, in which you are a travelling Federation ship transporting vital data to the Federation home base.
+				In FTL, a large emphasis is put on survival and trade through resource management.
+				A seperate document will be developed depicting various aspects of how the game is designed, and will be summerised.
+				The main purpose of this is to put all of my ideas for the game down on paper, and be able to consider their importance to the game, and how difficult each feature would be to implementation.
+			</p>
+
+			<p>The game design is however secondary to the orbital simulation aspect.</p>
+
+		<h4>Game Engine and other Technical Decisions</h4>
+			<p>
+				There are also other considerations when making a game, with one of the main ones being the need to choose an engine.
+				Computer programming requires complex interactions with computer code, which is unintelligable to the human eye, unless studied for hours.
+				Because of this, coding has always taken place in layers.
+				In the case of a game engine, like Unreal Engine, the pipeline looks like the following.
+			</p>
+
+			<p>
+				Blueprints, a block based editor for in game events. <br>
+				<small>which is converted into</small> <br>
+				C++, a coding language derived from C, understandable to the human eye. <br>
+				<small>which is converted into</small> <br>
+				Assembly, which is closer to raw computer code, and extremely difficult to understand due to things like memory addressing. <br>
+				<small>which is converted into</small> <br>
+				Raw instructions (x86), that are sent to the Central Proccessing Unit, which performs calculations.
+			</p>
+
+			<p>
+				Because there are so many layers to direct computation, there are major differences between high-level languages, making the decision on which tool to use an important one.
+				In the game development world, there are 4 main game engines.
+			</p>
+
+			<h5>Unity</h5>
+				<p>The "standard option" for game development. Not particularlly powerful, nor efficient, but an established for indepentant and small to medium sized studio creations. Notable games include Cuphead, Hollow Night, Hearthstone, Rust, Subnautica, and Beat Saber.</p>
+			
+			<h5>Unreal</h5>
+				<p>The "triple A option". Very powerful, but also inefficient, sometimes convoluted to use, and incapacle of 2D without some major mucking abourt. Established among large studio creations for powerful hardware, though some large studios choose to make their own engines instead. Notable games include Fortnite, ARK: Survival Evolved, Black Myth Wukong
+			
+			<h5>Gamemaker</h5>
+				<p>The stereotypical indie game dev engine. Not a powerful engine, and realistically is only capacble of 2D games. It has a reputation as an easy way for small teams of people to make a game, even without expirience in coding. Known best as a creative outlet, and having games that prioritise unique visual style and gameplay over visual imprevsiveness. Notable games include Undertale, Spelunky, Hotline Miami, Risk of Rain, and Pizza Tower.
+
+			<h5>Godot</h5>
+				<p>A relative newbie in the game engine world, Godot has been quickly picking up steam. Not particularlly powerful, and like a more capable Gamemaker in many ways. Lightweight 2D and 3D games are Godot's specialty. Godot is the only open source engine on the list, and uses a Python-like language. Notable games include Brotato, Buckshot Roulette, Dome Keeper and Friday Night Funkin' VR.</p>
+
+			<h5>The Decision</h5>
+			<p>
+				Because of the different goals of each game engine, important technical decisions must be made to narrow down which is best suited for this application.
+				For several reasons, the game is to be in 2D instead of 3.
+				Firstly because it is easier to code and easy to make assets for (like planets and ships), which makes it much easier to.
+			</p>
+
+			<p>
+				From these requirements, Unreal Engine is immediately removced from contention. There is not chance that something as large and powerful as Unreal Engine could ever run on my laptop, for .
+				My home computer can run it, but even then it can struggle with larger scenes, which would be necessary when creating a 3D soalr system like would be required in this engine.
+			</p>
+
+			<p>
+				For a simillar reason, Unity is also out of the question.
+				While more easier to use than Unreal, it has some quirks to it, like it's multiple rendering pipelines, and its reliance on C#, which is a flawed language compared to many others, as it is as complex as C++ to learn, while bringing little of the performance benefits.
+				Unity itself is a good, engine, but I wish not to have to learn C# to use it.
+			</p>
+
+			<p>
+				Again for scripting language reasons, Gamemaker falls to the same fate as it's larger siblings.
+				Gamemaker uses a proprietary language based loosely on C.
+				Learning any hard fast coding techniques in gamemaker leaves no guarantee that those skills are transferable.
+			</p>
+
+			<p>
+				That leaves Godot, which is atractive for many reasons.
+				Firstly, Godot uses GDScript, a coding language extremely simillar to Python, with the option to use C++.
+				This is good because I am already familiar with Python, and if I were to ever learn a new language, C++ would be at the top of that list, for it is amoung the most powerful languages on offer.
+			</p>
+	</div>
+
+	<div class="section" data-color="hsl(300, 50%, 12.5%)">
+
+		<h2>Extended Research and Early Development</h2>
+		
+	</div>
+
+	<div class="section" data-color="hsl(330, 50%, 12.5%)">
+		<h3>Research</h3>
+			<p>
+				The next stages of the project are argueably the most important.
+				Vague goals for the game have been explored, but that does not mean that the design of the game is finished.
+				The next section of this portfolio is exploring about being specific about what this game will need to be.
+			</p>
+
+		<h3>Interviews and Opinions</h3>
+			<p>
+				The most important part of the research for a game is it's audience.
+				If a game is to succeed, it must satisfy it's customers, and to do that the game design must include elements of what the people want.
+				For this, a survey was conducted on what people want from a game of this genre.
+				Alongside this survey, there was a series of interviews of people more familiar with development, and their opinions of how ambitious the planned features are.
+				The survey was to have a collection of opinions from 16 people, mainly friends and people who are invested in the genre, as they are the target audiences. 
+				This was used to find different perspectives on the Sci-Fi genre, and to better tailor my game to it's target audience.
+			</p>
+
+			<p>
+				The survey was to ask several questions about the genre and stylistic decisions on the game, including but not limited to:
+			</p>
+
+			<p>
+				What do you expect from a space faring videogame?
+			</p>
+
+			<p>
+				What level of realism to you expect from space faring videogames?
+			</p>
+
+			<p>
+				What sort of playstyle do you take in space faring videogames?
+			</p>
+
+			<p>
+				List the following features from highest priority to lowest.
+			</p>
+
+			<p>
+				Exploration
+				<br>
+				Fluid Combat
+				<br>
+				Fluid Movement
+				<br>
+				Trading Markets w/ Supply and Demand
+				<br>
+				Customisable Armoury
+				<br>
+				Realistic N-body Physics
+				<br>
+				Visual Fidelity (Graphics Quality)
+				<br>
+				Immersion / Sound Effects
+				<br>
+				Story / Campaign
+				<br>
+			</p>
+
+
+		<h3>Developing a Timeline</h3>
+			<p>
+				While waiting for actionable results from the survey, I decided to set up a vague timeline, and goals to hit to make sure I would have something to show by the end of the term.
+				The timeline was split up by month of completion for each goal.
+			</p>
+
+		<h4>Febuary</h4>
+			<p>
+				Plan the gameplay, the ships, the structure of the game, the goals, the solar system, etc.
+				This is effectively everything above this point in the portfolio.
+			</p>
+			
+		<h4>March</h4>
+			<p>
+				Create the Godot project, mess around a bit, create the rendering system for the background and planets.
+				Then create the physics model, with accurate simulation of gravity.
+				Test the model with large amounts of planets to test accuracy and performance.
+			</p>
+
+		<h4>April</h4>
+			<p>
+				Customise and personalise the planets, create the player ship, player controls, basic weapons and basic enemies/targets.
+			</p>
+
+		<h4>May</h4>
+			<p>
+				Create the UI apps, cusomisable armoury and enemy pathfinding.
+				The game is to be finished at some point in May, but as with all coding project, Murphy's law applies, so there is likely that there will still be stuff to do.
+			</p>
+
+		<h3>Feedback</h3>
+			<p>
+				It was at this point I sought feedback on the feasibility of the timeline, as well as the project in general.
+				For this purpose, I spoke with Harry Atherton, in my Game Dev class about the ideas for this project.
+				Harry Wholehearted believed it was possible
+			</p>
+			
+	</div>
+
+	<div class="section" data-color="hsl(0, 50%, 12.5%)">
+
+		<h3>Early Development</h3>
+		<h4>Beginning</h4>
+			<p>
+				The beginning stages of game development went extremely well.
+				The physics model for the game was the first thing on the timeline.
+			</p>
+
+		<h4>First Major Issue</h4>
+			<p>
+				The first major issue found regarding the development aspect was regarding the orbital lines.
+			</p>
+			
+	</div>
+
+	<div class="section" data-color="hsl(30, 50%, 12.5%)">
+
+		<h2>Continuing Development and a Pivot</h2>
+		
+	</div>
+
+	<div class="section" data-color="hsl(60, 50%, 12.5%)">
+
+		<h3>The Change</h3>
+		<h4>Survey Results</h4>
+			<p>
+				It was at this point the results of the survey came back, and with some unexpected results.
+			</p>
+			
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+			
+
+		<h4>New Progress</h4>
+			<p>
+				Since then
+			</p>
+
+		<h4>Feeback</h4>
+			<p>
+				Gotten feedback from Harry again
+				Good amount of progress made, but "not enough"
+			</p>
+			
+	</div>
+
+	<div class="section" data-color="hsl(90, 50%, 12.5%)">
+
+		<h2>Conclusion</h2>
+		
+	</div>
+
+	<div class="section" data-color="hsl(120, 50%, 12.5%)">
+
+		<h3>The Change</h3>
+		<h4>Survey Results</h4>
+			<p>
+				It was at this point the results of the survey came back, and with some unexpected results.
+			</p>
+			
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+			
+
+		<h4>New Progress</h4>
+			<p>
+				Since then
+			</p>
+
+		<h4>Feeback</h4>
+			<p>
+				Gotten feedback from Harry again
+				Good amount of progress made, but "not enough"
+			</p>
+			
+	</div>
+
+	<script>
+		const sections = document.querySelectorAll('.section');
+		const threshold = window.innerHeight * 0.125; // 12.5vh in pixels
+		let lastColor = '';
+
+		function changeBackground() {
+			let scrollPos = window.scrollY + window.innerHeight / 2; // Midpoint of screen
+
+			sections.forEach(section => {
+				const top = section.offsetTop + threshold;
+				const bottom = top + section.offsetHeight - threshold * 2;
+				const newColor = section.getAttribute('data-color');
+
+				if (scrollPos >= top && scrollPos < bottom && newColor !== lastColor) {
+					document.body.style.backgroundColor = newColor;
+					lastColor = newColor;
+				}
+			});
+		}
+
+		window.addEventListener('scroll', changeBackground);
+		changeBackground();
+	</script>
+</body>
+</html>
