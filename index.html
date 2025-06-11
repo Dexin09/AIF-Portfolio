@@ -100,6 +100,31 @@
 
 	</div>
 
+	<div class="section" data-color="hsl(180, 50%, 12.5%)">
+
+		<h3>How to Access and Download</h3>
+
+		<p>
+			This version is a link because I created the portfolio as a website.
+			If a link is not good enough, there are two ways to download the files.
+			First is plain text, without images.
+			Second is the full folder, but it is more cluttered.
+		</p>
+
+		<p>
+			If the raw text version (no images) is required press <button onclick="downloadText()">Download Text Version Here</button> to download "website.txt", which contains only the stored text in this website.
+		</p>
+
+		<p>
+			If a version with images is needed, press <button onclick="window.location.href='https://github.com/Dexin09/AIF-Portfolio/archive/refs/heads/main.zip'"> Download Project ZIP Here</button> to download the website files.
+			If you choose this second option, you can view the website offline by extracting the .zip file, and opening "index.html".
+			The images in the .zip folder must stay as "siblings" to index.html if they are to display on the website.
+			Normally I would attach a .zip with instructions like these, but Daymap has file restrictions for .zip files (such as size and allowed file types).
+		</p>
+		
+
+	</div>
+
 	<div class="section" data-color="hsl(210, 50%, 12.5%)">
 
 		<h2>Creating a Goal</h2>
@@ -336,7 +361,7 @@
 			</p>
 
 			<p>
-				What sort of playstyle do you take in space faring videogames?
+				What sort of playstyle do you take in space faring videogames (Combat vs trading vs asteroid mining etc)?
 			</p>
 
 			<p>
@@ -368,6 +393,7 @@
 		<h3>Developing a Timeline</h3>
 			<p>
 				While waiting for actionable results from the survey, I decided to set up a vague timeline, and goals to hit to make sure I would have something to show by the end of the term.
+				This was a pivotal part of the proper time and resource management skills needed.
 				The timeline was split up by month of completion for each goal.
 			</p>
 
@@ -392,14 +418,20 @@
 		<h4>May</h4>
 			<p>
 				Create the UI apps, cusomisable armoury and enemy pathfinding.
-				The game is to be finished at some point in May, but as with all coding project, Murphy's law applies, so there is likely that there will still be stuff to do.
+				The game is to be finished at some point in late May, but as with all coding project, Murphy's law applies, so there is likely that there will still be stuff to do.
+			</p>
+
+		<h4>June</h4>
+			<p>
+				The finishing touches.
+				While the project should be "finished", there will always be some level of delays in a project, as well as polish yet to be applied.
 			</p>
 
 		<h3>Feedback</h3>
 			<p>
 				It was at this point I sought feedback on the feasibility of the timeline, as well as the project in general.
 				For this purpose, I spoke with Harry Atherton, in my Game Dev class about the ideas for this project.
-				Harry Wholehearted believed it was possible
+				Harry wholehearted believed it was possible.
 			</p>
 			
 	</div>
@@ -407,17 +439,74 @@
 	<div class="section" data-color="hsl(0, 50%, 12.5%)">
 
 		<h3>Early Development</h3>
-		<h4>Beginning</h4>
+		<h4>Physics Model</h4>
+		<p>
+			The first step of any game is developing the base systems that underpin the movement and levels.
+			In this case, that means creating a scalable and smooth approximation of Newtonian gravity in a simplified 2D environment, simulating both large celestial objects and smaller, affected bodies.
+		</p>
+
+		<h5>Understanding</h5>
 			<p>
-				The beginning stages of game development went extremely well.
-				The physics model for the game was the first thing on the timeline.
+				In order to develop a physics model for the system, I first need to understand how an N-body physics simulation works.
+				I also needed to study the actual physics involved.
+				To begin, I read up on both of these topics from sources such as
+				<a href="https://nbodyphysics.com/blog/about/">https://nbodyphysics.com/blog/about/</a>
+				and
+				<a href="https://en.wikipedia.org/wiki/Orbital_mechanics#Practical_techniques">https://en.wikipedia.org/wiki/Orbital_mechanics#Practical_techniques</a>.
+				Then I compared the techniques used by the author of the blog, to the general principles of newtonian physics in order to understand what parts are most important to the simulation of physics, as well as helping to boost my understanding of which piece of code does what.
+				Overall, this was extremely helpful to the development of my understanding of physics simulations in general.
 			</p>
 
-		<h4>First Major Issue</h4>
 			<p>
-				The first major issue found regarding the development aspect was regarding the orbital lines.
+				The biggest difference I found, is that classical equations attempt to find the force applied by an object, whereas the simulation directly computes acceleration.
+				In many ways this second interpretation is a cleaner, less compicated solution than my previous plan, which is why I'm modifying my approach slightly to include this method.
+			</p>
+
+		<h5>Implementing</h5>
+			<p>
+				With my newly found understanding of orbital mechanics, I started to plan my implementation of N-body physics.
+				One of the interesting points made in the blog was regarding the priority of certain celestial objects.
+				This helps to increase performance with extremely minimal effects on simulation accuracy.
+			</p>
+
+			<p>
+				The exact implemntation I used separates the universe into two categories: celestialBodies (e.g. planets, stars) that influence each other, and otherBodies (e.g. satellites, ships) that are influenced by celestial objects but do not exert their own gravitational pull.
+				This improves performance and still allows for hybrid systems (e.g., gravity slingshots, an important feature of Principia, one of the original inspirations of the project).
+			</p>
+
+			<p>
+				Another technique I wanted to implement was the ability to increase and decrease the speed of the simulation.
+				This is because planets orbit very slowly, so the game must be sped up to have noticible pulls of gravity.
+				A global timeScale variable allows us to dynamically speed up or slow down the simulation without impacting accuracy.
+				This better allows me to fine tune the speed of the simulation, which helps me make the game more intuitive to play.
+			</p>
+
+		<h5>Challenges</h5>
+			<p>
+				Initial versions suffered from floating point instability when objects came too close, leading to extreme accelerations.
+				This was solved this by clamping the minimum r or implementing softening.
+			</p>
+
+			<p>
+				Ensuring position and velocity updates didn't interfere with physics layers required carefully decoupling from built-in physics nodes was also important.
+				Opting for pure script-based motion as opposed to built in solutions helped avoid issues with quirks in existing Godot systems.
 			</p>
 			
+			<p>
+				Another thing I had to account for, was the fact that the planets were not easy to see from a distance, due to there being a realistic scale.
+				In order to account for this, I had the choice between either creating planet markers, or increasing the visual size of the planets.
+				I went for the latter option, which also allowed me to add more intuitive graphics, which helped with player's understanding of the physics at play.
+			</p>
+
+		<h5>Results</h5>
+			<p>
+				Here I present the final code for the physics engine, and a quick demonstration of the planets orbiting the sun.
+			</p>
+
+			<p><img src="code1.png"></p>
+			
+			<p><img src="expiriment1.png"></p>
+
 	</div>
 
 	<div class="section" data-color="hsl(30, 50%, 12.5%)">
@@ -431,20 +520,54 @@
 		<h3>The Change</h3>
 		<h4>Survey Results</h4>
 			<p>
-				It was at this point the results of the survey came back, and with some unexpected results.
+				It was at this point the results of the survey came back.
+				It reached 15 of my peers - much more than I was expecting - and had unexpected results.
+				The most interesting part of which was regarding what priorities different people had for space faring videogames.
 			</p>
 			
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				<img src="surveygraph1.png">
 			</p>
-			
+
+			<p>
+				This helped me to understand what target audiences wanted out of a space game, which in turn helped me to plan and implement more important features first.
+				The main application of this new learning, was a pivot away from a peaceful sandbox sort of game, and a shift towards a more combat focused game, as per market demand.
+				Results indicated that the original gameplay loop—centered around cargo delivery and trading—was perceived as tedious and lacking excitement.
+				In contrast, space combat received the most enthusiasm, especially when paired with the idea of orbital movement and tactics.
+				As a result, I pivoted the game design to focus primarily on combat in orbital contexts, which adds a unique twist to a familiar genre.
+				This shift also simplified several systems and allowed me to prioritize fast-paced, engaging gameplay over complex economic simulations.
+				This simplification also meant that I could better alocate my resources to features that player wanted, instead of misplacing my time working on gameplay that majority of my playerbase would not be interested in.
+			</p>
+
+			<p>
+				The survey also revealed that orbital mechanics were difficult for many players to intuitively understand, even with visual aids.
+				Based on this, I planned to implement a basic tutorial system to explain how orbits, velocity, and gravity affect gameplay.
+				While not a priority for the initial build, this feature is flagged for development after core mechanics are complete.
+			</p>
 
 		<h4>New Progress</h4>
 			<p>
-				Since then
+				With this new information in mind, I continued developement with a lesser focus on sandbox elements
 			</p>
 
-		<h4>Feeback</h4>
+			<p>	
+				Continuing with what I had, I still encountered several technical roadblocks that significantly affected progress.
+				One major challenge involved visualizing orbits, as it was clear this would be important for players not understanding orbital mechanics. (Which again, seems to be more people than I though according to the survey)
+				Initially, I drew predicted paths using a naive method that calculated points ahead in time.
+				However, this method was both inaccurate and performance-heavy.
+			
+			<p>
+				To solve this, I studied the open-source code of the Principia mod for Kerbal Space Program, addapting on a technique called patched conics.
+				Instead of going step by step finding the exact future position of every celestial body, I would draw an ellipse based on the current position and velocity of an object.
+				This approach is less accurate, but is easier to code, more visually intuitive, and better for performance.
+				This simplified orbital prediction by treating each gravitational interaction separately, allowing me to approximate realistic trajectories with far better efficiency.
+			</p>
+
+
+Another issue arose with collision detection. The original implementation used Godot's Area2D nodes, which clashed with the sprite animations I needed to import from asset packs. Animations wouldn’t play correctly, and collision boxes were unreliable. Switching to Node2D resolved the animation issue but broke the existing collision system. I rewrote the logic using body_entered signals instead of area_entered, following documentation from the Godot community wiki. This fixed the inconsistency and allowed for smoother, more responsive collisions during combat.
+			</p>
+
+		<h4>Feedback</h4>
 			<p>
 				Gotten feedback from Harry again
 				Good amount of progress made, but "not enough"
@@ -460,26 +583,10 @@
 
 	<div class="section" data-color="hsl(120, 50%, 12.5%)">
 
-		<h3>The Change</h3>
-		<h4>Survey Results</h4>
+		<h3>Conclusion</h3>
+		<h4>Conclusion</h4>
 			<p>
-				It was at this point the results of the survey came back, and with some unexpected results.
-			</p>
-			
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</p>
-			
-
-		<h4>New Progress</h4>
-			<p>
-				Since then
-			</p>
-
-		<h4>Feeback</h4>
-			<p>
-				Gotten feedback from Harry again
-				Good amount of progress made, but "not enough"
+				Lorem ispum dolor sit amet.
 			</p>
 			
 	</div>
@@ -506,6 +613,20 @@
 
 		window.addEventListener('scroll', changeBackground);
 		changeBackground();
+
+		function downloadText() {
+			const text = document.body.innerText;
+			const blob = new Blob([text], { type: "text/plain" });
+			const url = URL.createObjectURL(blob);
+
+			const a = document.createElement("a");
+			a.href = url;
+			a.download = "website.txt";
+			a.click();
+
+			URL.revokeObjectURL(url);
+		}
+
 	</script>
 </body>
 </html>

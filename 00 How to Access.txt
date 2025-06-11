@@ -1,0 +1,7 @@
+How to Access
+
+To access the website, make sure "index.html" is in the same folder as the rest of the image files (otherwise they will not load).
+
+Then open "index.html" with any modern web browser to view the website.
+
+If I have time, I may attach a .pdf version of the website, which may also work.
