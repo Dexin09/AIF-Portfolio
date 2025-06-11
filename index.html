@@ -427,6 +427,14 @@
 				While the project should be "finished", there will always be some level of delays in a project, as well as polish yet to be applied.
 			</p>
 
+		<h4>Schedule</h4>
+			<p>
+				As well as a vague timeline for the project, I decided it would be good to set aside time for myself to work on the game.
+				I decided to spend half my time working on the project, and the other half working on whatever documentation or assignment was needed for AIF.
+				Most of the time, I plan to spend 30 minutes on one, then 30 minutes on the other.
+				This goes for both in class time, as well as at least 1 hour of homework per week, so that I am constantly making <i>some</i> progress.
+			</p>
+
 		<h3>Feedback</h3>
 			<p>
 				It was at this point I sought feedback on the feasibility of the timeline, as well as the project in general.
@@ -536,7 +544,7 @@
 				In contrast, space combat received the most enthusiasm, especially when paired with the idea of orbital movement and tactics.
 				As a result, I pivoted the game design to focus primarily on combat in orbital contexts, which adds a unique twist to a familiar genre.
 				This shift also simplified several systems and allowed me to prioritize fast-paced, engaging gameplay over complex economic simulations.
-				This simplification also meant that I could better alocate my resources to features that player wanted, instead of misplacing my time working on gameplay that majority of my playerbase would not be interested in.
+				This simplification also meant that I could better alocate my resources to features that players wanted, instead of misplacing my time working on gameplay that majority of my playerbase would not be interested in.
 			</p>
 
 			<p>
@@ -547,7 +555,14 @@
 
 		<h4>New Progress</h4>
 			<p>
-				With this new information in mind, I continued developement with a lesser focus on sandbox elements
+				With this new information in mind, I continued developement with a lesser focus on sandbox elements, and a bigger focus on ship movement and combat.
+			</p>
+
+			<p>
+				At this point I also decided to implement a new strategy.
+				While I have used the engine in the past, I am not as proficient with Godot as I could be.
+				I came to the conclusion that the best way to boost my skills would be to practice them.
+				To this effect, I allowed myself some time, outside of my normal 
 			</p>
 
 			<p>	
@@ -563,8 +578,15 @@
 				This simplified orbital prediction by treating each gravitational interaction separately, allowing me to approximate realistic trajectories with far better efficiency.
 			</p>
 
-
-Another issue arose with collision detection. The original implementation used Godot's Area2D nodes, which clashed with the sprite animations I needed to import from asset packs. Animations wouldn’t play correctly, and collision boxes were unreliable. Switching to Node2D resolved the animation issue but broke the existing collision system. I rewrote the logic using body_entered signals instead of area_entered, following documentation from the Godot community wiki. This fixed the inconsistency and allowed for smoother, more responsive collisions during combat.
+			<p>
+				Another issue arose with collision detection.
+				The original implementation used Godot's Area2D nodes, which clashed with the sprite animations I needed to import from asset packs.
+				Animations wouldn't play correctly, and collision boxes were unreliable.
+				Switching to Node2D resolved the animation issue but broke the existing collision system.
+				I rewrote the logic using body_entered signals instead of area_entered, following documentation from the Godot community wiki.
+				This fixed the inconsistency and allowed for smoother, more responsive collisions during combat.
+				From this point onwards I decided to lean more heavily into using the Godot docs, as it helped save time debugging, and trying to test built-in features.
+				Additionally, reading more of the documentation helped to boost my overall proficiency in the engine.
 			</p>
 
 		<h4>Feedback</h4>
@@ -586,7 +608,10 @@ Another issue arose with collision detection. The original implementation used G
 		<h3>Conclusion</h3>
 		<h4>Conclusion</h4>
 			<p>
-				Lorem ispum dolor sit amet.
+				Notes
+				followed schedule, but still lagged behind timeline slightly
+
+				could have recieved more feedback (ie other people with different perspetcive etc)
 			</p>
 			
 	</div>
